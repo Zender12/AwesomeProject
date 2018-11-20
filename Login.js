@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, ImageBackground, TextInput} from 'react-native';
-import { TabHeading, Tabs, Tab, Root, Card, CardItem, Text, Body, Toast, Content, Form, Item, Input, Label, Container, Header, Button, Right, Icon } from "native-base";
+import { Spinner, ListItem, List, TabHeading, Tabs, Tab, Root, Card, CardItem, Text, Body, Toast, Content, Form, Item, Input, Label, Container, Header, Button, Right, Icon } from "native-base";
+import Geolocation from './Geolocation'
+
 
 type Props = {};
 export default class LoginScreen extends Component<Props> {
@@ -13,10 +15,9 @@ export default class LoginScreen extends Component<Props> {
         this.state = {
             login: '',
             pass: '',
-            isLogged: true
+            isLogged: false,
         };
     }
-
     onLoginClick() {
         if (this.state.login === this.logPass.login
         && this.state.pass === this.logPass.pass) {
@@ -37,21 +38,41 @@ export default class LoginScreen extends Component<Props> {
 
     renderView() {
         if (this.state.isLogged) {
+            console.log(1);
             return this.renderHome();
         } else {
+                    console.log(2);
+
             return this.renderLogin();
         }
     }
 
     renderHome() {
+     var items = [
+          'Simon Mignolet',
+          'Nathaniel Clyne',
+          'Dejan Lovren',
+          'Mama Sakho',
+          'Emre Can'
+        ];
       return (
         <Container>
           <Tabs>
-            <Tab heading={ <TabHeading><Icon name="camera" /><Text>Camera</Text></TabHeading>}>
-                <Text> Camera</Text>
+            <Tab heading={ <TabHeading><Icon name="camera" /><Text>List</Text></TabHeading>}>
+               <Container>
+                 <Content>
+                   <List dataArray={items}
+                     renderRow={(item) =>
+                       <ListItem>
+                         <Text>{item}</Text>
+                       </ListItem>
+                     }>
+                   </List>
+                 </Content>
+               </Container>
             </Tab>
-            <Tab heading={ <TabHeading><Icon name="apps" /></TabHeading>}>
-                <Text> Menu</Text>
+            <Tab heading={ <TabHeading><Icon name="apps" /><Text>Geolocation</Text></TabHeading>}>
+                <Geolocation />
             </Tab>
            </Tabs>
         </Container>
@@ -86,6 +107,10 @@ export default class LoginScreen extends Component<Props> {
             </Container>
         );
     }
+
+
+
+
 
   render() {
     return (
