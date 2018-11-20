@@ -1,17 +1,24 @@
 //import React, {Component} from 'react';
-//import {Platform, StyleSheet, View, ImageBackground, TextInput} from 'react-native';
+//import { StyleSheet, Text, View, Button } from 'react-native';
+//type Props = {};
+//export default class Home extends Component<Props> {
+// constructor(props) {
+//   super();
 //
-//class HomeScreen extends React.Component {
-//  static navigationOptions = {
-//    title: 'Welcome',
-//  };
+//  // binsings
+//  this.myFunction = this.myFunction.bind(this)
+//}
 //  render() {
-//    const {navigate} = this.props.navigation;
 //    return (
-//      <Button
-//        title="Go to Jane's profile"
-//        onPress={() => navigate('Profile', {name: 'Jane'})}
-//      />
+//      <View style={styles.container}>
+//        We have no friends!
+//        <Button
+//          title="Add some friends"
+//          onPress={() =>
+//            this.props.navigation.navigate('Friends')
+//          }
+//        />
+//      </View>
 //    );
 //  }
-//}
+//  }
