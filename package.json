@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
+    "test": "jest"
   },
   "dependencies": {
     "native-base": "^2.8.1",
     "react": "16.6.1",
     "react-native": "0.57.5",
     "react-native-keep-awake": "^4.0.0",
-    "react-native-navigation": "^2.0.2641"
+    "react-navigation": "^3.0.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

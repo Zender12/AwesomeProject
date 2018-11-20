@@ -7,7 +7,7 @@ class HomeScreen extends Component {
     title: 'Welcome',
   };
   render() {
-//    const {navigate} = this.props.navigation;
+    const {navigate} = this.props.navigation;
     return (
       <Button
         title="Go to Jane's profile"
@@ -17,9 +17,9 @@ class HomeScreen extends Component {
   }
 }
 
-const AppNavigator = createStackNavigator({
-  HomeScreen: { screen: HomeScreen }
-});
+//const AppNavigator = createStackNavigator({
+//  HomeScreen: { screen: HomeScreen }
+//});
 type Props = {};
 export default class App extends Component<Props> {
   render() {
